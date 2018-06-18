@@ -18,27 +18,34 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.js"></script>
 
 <script type="text/babel">
-	const Header = <h1>Hello from React</h1>;
 
-	const HeaderDisplay = function() {
-		return <h1>This is the app Header</h1>;
+
+
+
+	class Counter extends React.Component {
+		handleSubtract() {
+			console.log('subtracted');
+
+		}
+		handleAdd() {
+			console.log('added');
+		}
+		render() {
+			return <div>
+
+				<button onClick={this.handleSubtract}>-</button>
+				<span style={{ padding: '10px' }}>9</span>
+				<button onClick={this.handleAdd}>+</button>
+
+			</div>;
+		}
 	}
 
-	const Clock = function(props) {
-		console.log(props);
-		const date = new Date();
-
-		const thisYear = date.getFullYear();
-
-		return <h1 style={{ color: props.color }}>Copyright: {thisYear}</h1>;
-}
 
 	const App = function() {
 		return <div>
-		<HeaderDisplay />
-		<Clock color="#ff0000" />
-		<Clock color="#00ff00" />
-		<Clock color="#0000ff" />
+		<Counter />
+
 			
 		</div>;
 	}
