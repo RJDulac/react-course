@@ -3,6 +3,12 @@
 <head>
 	<meta charset="UTF-8">
 	<title>React Element</title>
+	<style>
+		.header {
+			font-size: 49px;
+			color: red;
+		}
+	</style>
 </head>
 <body>
 	<div>
@@ -21,7 +27,7 @@
 
 		const thisYear = date.getFullYear();
 
-		return <h1>This year is: {thisYear}</h1>;
+		return <h1 className="header"/*style={{color: "red", fontSize: "49px", backgroundColor: "black" }}*/>This year is: {thisYear}</h1>;
 }
 
 	ReactDOM.render(<Clock />, document.getElementById('app'));
