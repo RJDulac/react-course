@@ -44,8 +44,19 @@
 			
 		}
 		render() {
+
+			let type = '';
+
+			if(this.state.count % 2 === 0) {
+			type = 'even';
+		} else {
+			type = 'odd';
+	}
 			console.log('I was rendered');
 			return <div>
+
+				<h1>{type}</h1>
+				<h2>{this.state.count % 2 === 0 ? 'even' : 'odd'}</h2>
 
 				<button onClick={this.handleSubtract}>-</button>
 				<span style={{ padding: '10px' }}>{this.state.count}</span>
