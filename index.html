@@ -16,7 +16,15 @@
 <script type="text/babel">
 	const Header = <h1>Hello from React</h1>;
 
-	ReactDOM.render(Header, document.getElementById('app'));
+	const Clock = function() {
+		const date = new Date();
+
+		const thisYear = date.getFullYear();
+
+		return <h1>This year is: {thisYear}</h1>;
+}
+
+	ReactDOM.render(<Clock />, document.getElementById('app'));
 	
 
 
